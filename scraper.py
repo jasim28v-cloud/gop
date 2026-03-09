@@ -2,34 +2,51 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 import re
+import random
+import time
+from fake_useragent import UserAgent
 
 def run_news():
-    rss_url = "https://akhbaralaan.net/feed/rss/"
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
-    
+    rss_url = "https://www.aljazeera.net/rss/sport"
+
+    # استخدام fake_useragent لتوليد رأس User-Agent واقعي
+    ua = UserAgent()
+    headers = {
+        'User-Agent': ua.random,
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Language': 'ar-IQ,ar;q=0.8,en-US;q=0.5',
+        'Referer': 'https://www.google.com/',
+        'DNT': '1',
+        'Connection': 'keep-alive',
+        'Upgrade-Insecure-Requests': '1',
+    }
+
     try:
         # الرابط المباشر الخاص بك
         my_direct_link = "https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default"
-        
+
         # أكواد الإعلانات الإضافية التي زودتني بها
         ad_ins_code = '<ins style="width: 300px;height:250px" data-width="300" data-height="250" class="g2fb0b4c321" data-domain="//data527.click" data-affquery="/e3435b2a507722939b6f/2fb0b4c321/?placementName=default"><script src="//data527.click/js/responsive.js" async></script></ins>'
         ad_script_code = '<script type="text/javascript" src="//data527.click/129ba2282fccd3392338/b1a648bd38/?placementName=default"></script>'
-        
+
+        # إضافة تأخير عشوائي قبل إرسال الطلب
+        time.sleep(random.uniform(1, 3))
+
         response = requests.get(rss_url, headers=headers, timeout=20)
         response.encoding = 'utf-8'
-        
+
         soup = BeautifulSoup(response.content, 'xml')
         items = soup.find_all('item')
-        
+
         ticker_items = " • ".join([item.title.text for item in items[:12]])
         news_html = ""
-        
+
         for i, item in enumerate(items[:20]):
             title = item.title.text
             news_url = item.link.text
             img_element = item.find('enclosure')
             img_url = img_element.get('url') if img_element else "https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE"
-            
+
             description = item.description.text if item.description else ""
             clean_desc = re.sub('<[^<]+?>', '', description)[:110] + "..."
 
@@ -63,7 +80,7 @@ def run_news():
                 </div>'''
 
         now_date = datetime.now().strftime("%Y-%m-%d")
-        
+
         full_html = f'''<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -80,31 +97,31 @@ def run_news():
             --text-main: #ffffff;
         }}
         * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-        body {{ 
+        body {{
             background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             background-attachment: fixed;
             background-size: cover;
-            font-family: 'Cairo', sans-serif; 
-            color: var(--text-main); 
+            font-family: 'Cairo', sans-serif;
+            color: var(--text-main);
             padding-top: 150px;
         }}
-        
-        header {{ 
-            background: rgba(0, 0, 0, 0.4); 
-            backdrop-filter: blur(25px); 
-            padding: 15px 5%; 
-            position: fixed; top: 0; width: 100%; z-index: 1000; 
+
+        header {{
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(25px);
+            padding: 15px 5%;
+            position: fixed; top: 0; width: 100%; z-index: 1000;
             border-bottom: 1px solid var(--glass-border);
-            display: flex; justify-content: space-between; align-items: center; 
+            display: flex; justify-content: space-between; align-items: center;
         }}
         .logo {{ font-size: 26px; font-weight: 900; color: #fff; text-decoration: none; }}
         .logo span {{ color: var(--danger-accent); text-shadow: 0 0 10px var(--danger-accent); }}
-        
-        .ticker-wrap {{ 
-            position: fixed; top: 85px; width: 100%; 
-            background: rgba(255, 8, 68, 0.85); 
+
+        .ticker-wrap {{
+            position: fixed; top: 85px; width: 100%;
+            background: rgba(255, 8, 68, 0.85);
             backdrop-filter: blur(10px);
-            color: #fff; overflow: hidden; height: 40px; 
+            color: #fff; overflow: hidden; height: 40px;
             display: flex; align-items: center; z-index: 999;
         }}
         .ticker-title {{ background: #000; padding: 0 20px; font-weight: 900; z-index: 2; height: 100%; display: flex; align-items: center; font-size: 13px; }}
@@ -112,35 +129,35 @@ def run_news():
         @keyframes scroll {{ 0% {{ transform: translateX(100%); }} 100% {{ transform: translateX(-250%); }} }}
 
         .container {{ max-width: 1250px; margin: 0 auto 50px; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }}
-        
-        .glass-card {{ 
-            background: var(--glass-bg); 
+
+        .glass-card {{
+            background: var(--glass-bg);
             backdrop-filter: blur(20px);
-            border-radius: 25px; overflow: hidden; 
-            transition: 0.4s; 
-            border: 1px solid var(--glass-border); 
+            border-radius: 25px; overflow: hidden;
+            transition: 0.4s;
+            border: 1px solid var(--glass-border);
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }}
         .glass-card:hover {{ transform: scale(1.03); border-color: var(--primary-accent); }}
-        
+
         .badge {{ position: absolute; top: 15px; left: 15px; background: var(--danger-accent); color: #fff; padding: 4px 15px; font-size: 11px; font-weight: 700; border-radius: 10px; z-index: 5; }}
         .card-image {{ height: 210px; overflow: hidden; }}
         .card-image img {{ width: 100%; height: 100%; object-fit: cover; }}
-        
+
         .card-content {{ padding: 25px; }}
         .card-title {{ font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.5; }}
         .card-snippet {{ font-size: 13px; color: #ccc; margin-bottom: 20px; }}
-        
+
         .meta-data {{ display: flex; justify-content: space-between; font-size: 11px; color: var(--primary-accent); margin-bottom: 20px; border-top: 1px solid var(--glass-border); padding-top: 15px; }}
-        
+
         .action-area {{ display: flex; gap: 10px; }}
         .btn-prime {{ flex: 2; background: linear-gradient(90deg, #ff0844, #ffb199); color: #fff; text-decoration: none; text-align: center; padding: 12px; border-radius: 12px; font-weight: 700; }}
         .btn-outline {{ flex: 1; background: rgba(255,255,255,0.05); color: #fff; text-decoration: none; text-align: center; padding: 12px; border-radius: 12px; font-size: 12px; border: 1px solid var(--glass-border); }}
-        
+
         .ad-slot-wrapper {{ grid-column: 1 / -1; display: flex; justify-content: center; padding: 20px; background: rgba(255,255,255,0.02); border-radius: 20px; border: 1px dashed var(--glass-border); }}
-        
+
         footer {{ text-align: center; padding: 40px; color: rgba(255,255,255,0.4); font-size: 12px; border-top: 1px solid var(--glass-border); }}
-        
+
         @media (max-width: 600px) {{ .container {{ grid-template-columns: 1fr; }} }}
     </style>
 </head>
@@ -168,7 +185,7 @@ def run_news():
         with open("index.html", "w", encoding="utf-8") as f:
             f.write(full_html)
         print("Done! High-end Transparent Site with Ads generated.")
-            
+
     except Exception as e:
         print(f"Error: {e}")
 
