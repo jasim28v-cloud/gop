@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحدث 24 | النسخة المطورة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.07);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --primary-accent: #00f2fe;
+            --danger-accent: #ff0844;
+            --text-main: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: 'Cairo', sans-serif; 
+            color: var(--text-main); 
+            padding-top: 150px;
+        }
+        
+        header { 
+            background: rgba(0, 0, 0, 0.4); 
+            backdrop-filter: blur(25px); 
+            padding: 15px 5%; 
+            position: fixed; top: 0; width: 100%; z-index: 1000; 
+            border-bottom: 1px solid var(--glass-border);
+            display: flex; justify-content: space-between; align-items: center; 
+        }
+        .logo { font-size: 26px; font-weight: 900; color: #fff; text-decoration: none; }
+        .logo span { color: var(--danger-accent); text-shadow: 0 0 10px var(--danger-accent); }
+        
+        .ticker-wrap { 
+            position: fixed; top: 85px; width: 100%; 
+            background: rgba(255, 8, 68, 0.85); 
+            backdrop-filter: blur(10px);
+            color: #fff; overflow: hidden; height: 40px; 
+            display: flex; align-items: center; z-index: 999;
+        }
+        .ticker-title { background: #000; padding: 0 20px; font-weight: 900; z-index: 2; height: 100%; display: flex; align-items: center; font-size: 13px; }
+        .ticker-scroll { white-space: nowrap; animation: scroll 60s linear infinite; }
+        @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-250%); } }
+
+        .container { max-width: 1250px; margin: 0 auto 50px; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
+        
+        .glass-card { 
+            background: var(--glass-bg); 
+            backdrop-filter: blur(20px);
+            border-radius: 25px; overflow: hidden; 
+            transition: 0.4s; 
+            border: 1px solid var(--glass-border); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .glass-card:hover { transform: scale(1.03); border-color: var(--primary-accent); }
+        
+        .badge { position: absolute; top: 15px; left: 15px; background: var(--danger-accent); color: #fff; padding: 4px 15px; font-size: 11px; font-weight: 700; border-radius: 10px; z-index: 5; }
+        .card-image { height: 210px; overflow: hidden; }
+        .card-image img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .card-content { padding: 25px; }
+        .card-title { font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.5; }
+        .card-snippet { font-size: 13px; color: #ccc; margin-bottom: 20px; }
+        
+        .meta-data { display: flex; justify-content: space-between; font-size: 11px; color: var(--primary-accent); margin-bottom: 20px; border-top: 1px solid var(--glass-border); padding-top: 15px; }
+        
+        .action-area { display: flex; gap: 10px; }
+        .btn-prime { flex: 2; background: linear-gradient(90deg, #ff0844, #ffb199); color: #fff; text-decoration: none; text-align: center; padding: 12px; border-radius: 12px; font-weight: 700; }
+        .btn-outline { flex: 1; background: rgba(255,255,255,0.05); color: #fff; text-decoration: none; text-align: center; padding: 12px; border-radius: 12px; font-size: 12px; border: 1px solid var(--glass-border); }
+        
+        .ad-slot-wrapper { grid-column: 1 / -1; display: flex; justify-content: center; padding: 20px; background: rgba(255,255,255,0.02); border-radius: 20px; border: 1px dashed var(--glass-border); }
+        
+        footer { text-align: center; padding: 40px; color: rgba(255,255,255,0.4); font-size: 12px; border-top: 1px solid var(--glass-border); }
+        
+        @media (max-width: 600px) { .container { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <script type="text/javascript" src="//data527.click/129ba2282fccd3392338/b1a648bd38/?placementName=default"></script> <header>
+        <a href="#" class="logo">الحدث <span>24</span></a>
+        <div style="font-size: 12px; letter-spacing: 1px;">📅 2026-03-09</div>
+    </header>
+
+    <div class="ticker-wrap">
+        <div class="ticker-title">أهم الأنباء</div>
+        <div class="ticker-scroll">بعد تولي المرشد الجديد.. إيران تطلق جيلا جديدا من الصواريخ على تل أبيب • من جدل التوريث إلى شرعية الدم.. كيف اعتلى مجتبى خامنئي قمة السلطة بإيران؟ • أكسيوس: استياء أمريكي من قصف إسرائيل مخازن الوقود الإيرانية • ما "الدوائر الخمس" التي تعتمدها أمريكا وإسرائيل في حربهما على إيران؟ • في اليوم العالمي للمرأة.. "رايتس ووتش" تدعو لحماية المهاجرات في مراكز احتجاز أمريكية • لاريجاني و"خاتم الأنبياء" يشيدان والحرس الثوري يبايع المرشد الجديد • رئيس الكنيست الإسرائيلي يهدد باغتيال المرشد الجديد • "اللكمة" التي لطخت سمعة كرة القدم الإسبانية (فيديو) • بالفيديو.. طرد مورينيو خلال تعادل مثير في كلاسيكو الكرة البرتغالية • رئيس وزراء قطر: هجمات إيران على الدوحة تُشعرنا بـ"خيانة كبيرة" • استئناف مباريات الدوري القطري لكرة القدم • من إيران إلى إسرائيل والخليج.. الحرب تضرب مفاصل الطاقة والتجارة</div>
+    </div>
+
+    <main class="container">
+        
+            <article class="glass-card">
+                <div class="badge">حصري</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">بعد تولي المرشد الجديد.. إيران تطلق جيلا جديدا من الصواريخ على تل أبيب</h2>
+                    <p class="card-snippet">أعلن الحرس الثوري الإيراني إطلاق صواريخ على تل أبيب عقب تولي مجتبى خامنئي منصب المرشد الأعلى، في وقت استهدفت ف...</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/news/2026/3/9/%d8%a5%d9%8a%d8%b1%d8%a7%d9%86-%d8%aa%d8%b7%d9%84%d9%82-%d8%ac%d9%8a%d9%84%d8%a7-%d8%ac%d8%af%d9%8a%d8%af%d8%a7-%d9%85%d9%86-%d8%a7%d9%84%d8%b5%d9%88%d8%a7%d8%b1%d9%8a%d8%ae-%d8%b9%d9%84%d9%89" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+            <article class="glass-card">
+                <div class="badge">حصري</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">من جدل التوريث إلى شرعية الدم.. كيف اعتلى مجتبى خامنئي قمة السلطة بإيران؟</h2>
+                    <p class="card-snippet">اختارت إيران مجتبى خامنئي مرشدا أعلى بعد مقتل والده في الهجوم الإسرائيلي الأمريكي وينظر إلى صعوده بوصفه نتاج ت...</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/politics/2026/3/9/%d9%85%d8%b4%d8%b1%d9%88%d8%b9%d9%8a%d8%a9-%d8%a7%d9%84%d8%af%d9%85-%d9%88%d8%aa%d8%ac%d8%a7%d9%88%d8%b2-%d8%a7%d9%84%d8%aa%d9%88%d8%b1%d9%8a%d8%ab-%d9%83%d9%8a%d9%81-%d8%a7%d8%b9%d8%aa%d9%84%d9%89" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+            <article class="glass-card">
+                <div class="badge">حصري</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">أكسيوس: استياء أمريكي من قصف إسرائيل مخازن الوقود الإيرانية</h2>
+                    <p class="card-snippet">أفاد موقع أكسيوس نقلا عن مسؤول أمريكي وآخر إسرائيلي أن قصف إسرائيل عشرات مخازن الوقود في إيران، تجاوز توقعات و...</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/politics/2026/3/9/%d8%a3%d9%83%d8%b3%d9%8a%d9%88%d8%b3-%d8%a7%d8%b3%d8%aa%d9%8a%d8%a7%d8%a1-%d8%a3%d9%85%d8%b1%d9%8a%d9%83%d9%8a-%d9%85%d9%86-%d9%82%d8%b5%d9%81-%d8%a5%d8%b3%d8%b1%d8%a7%d8%a6%d9%8a%d9%84" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+            <article class="glass-card">
+                <div class="badge">خبر</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">ما "الدوائر الخمس" التي تعتمدها أمريكا وإسرائيل في حربهما على إيران؟</h2>
+                    <p class="card-snippet">قال الخبير العسكري إلياس حنا إن العقيدة العسكرية الأمريكية والإسرائيلية تعتمد على مبدأ &quot;الدوائر الخمس&quo...</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/politics/2026/3/9/%d8%ae%d8%a8%d9%8a%d8%b1-%d8%b9%d8%b3%d9%83%d8%b1%d9%8a-%d8%a5%d9%8a%d8%b1%d8%a7%d9%86-%d8%aa%d9%87%d8%af%d8%af-%d8%aa%d8%ad%d9%84%d9%8a%d8%a9-%d9%85%d9%8a%d8%a7%d9%87" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+                <div class="ad-slot-wrapper">
+                    <ins style="width: 300px;height:250px" data-width="300" data-height="250" class="g2fb0b4c321" data-domain="//data527.click" data-affquery="/e3435b2a507722939b6f/2fb0b4c321/?placementName=default"><script src="//data527.click/js/responsive.js" async></script></ins>
+                </div>
+            <article class="glass-card">
+                <div class="badge">خبر</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">في اليوم العالمي للمرأة.. "رايتس ووتش" تدعو لحماية المهاجرات في مراكز احتجاز أمريكية</h2>
+                    <p class="card-snippet">دعت منظمة هيومن رايتس ووتش إلى تعزيز حماية النساء المهاجرات المحتجزات لدى سلطات الهجرة الأمريكية، محذرة من تصا...</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/news/2026/3/9/%d9%81%d9%8a-%d8%a7%d9%84%d9%8a%d9%88%d9%85-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85%d9%8a-%d9%84%d9%84%d9%85%d8%b1%d8%a3%d8%a9-%d8%b1%d8%a7%d9%8a%d8%aa%d8%b3-%d9%88%d9%88%d8%aa%d8%b4" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+            <article class="glass-card">
+                <div class="badge">خبر</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">لاريجاني و"خاتم الأنبياء" يشيدان والحرس الثوري يبايع المرشد الجديد</h2>
+                    <p class="card-snippet">تتوالى في إيران ردود الفعل لاختيار آية الله مجتبى خامنئي مرشدا جديدا، إذ أشاد قاليباف ولاريجاني بقرار مجلس الخ...</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/news/2026/3/9/%d8%a7%d9%84%d9%82%d9%88%d8%a7%d8%aa-%d8%a7%d9%84%d9%85%d8%b3%d9%84%d8%ad%d8%a9-%d9%88%d9%83%d8%a8%d8%a7%d8%b1-%d8%a7%d9%84%d9%85%d8%b3%d8%a4%d9%88%d9%84%d9%8a%d9%86" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+            <article class="glass-card">
+                <div class="badge">خبر</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">رئيس الكنيست الإسرائيلي يهدد باغتيال المرشد الجديد</h2>
+                    <p class="card-snippet">رئيس الكنيست الإسرائيلي يهدد باغتيال المرشد الإيراني الجديد مجتبى خامنئي، والذي تولى منصبه خلفا لوالده علي خام...</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/news/2026/3/9/%d8%b1%d8%a6%d9%8a%d8%b3-%d8%a7%d9%84%d9%83%d9%86%d9%8a%d8%b3%d8%aa-%d8%a7%d9%84%d8%a5%d8%b3%d8%b1%d8%a7%d8%a6%d9%8a%d9%84%d9%8a-%d9%8a%d9%87%d8%af%d8%af-%d8%a8%d8%a7%d8%ba%d8%aa%d9%8a%d8%a7%d9%84" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+            <article class="glass-card">
+                <div class="badge">خبر</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">"اللكمة" التي لطخت سمعة كرة القدم الإسبانية (فيديو)</h2>
+                    <p class="card-snippet">تظل ذاكرة كرة القدم الإسبانية شاهدة على خلاف بين رئيسي ناديين تحوّل من الكلمات إلى اللكمات....</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/sport/2026/3/9/%d8%a7%d9%84%d9%83%d8%b1%d8%a9-%d8%a7%d9%84%d8%a5%d8%b3%d8%a8%d8%a7%d9%86%d9%8a%d8%a9-%d8%a7%d9%84%d9%84%d9%83%d9%85%d8%a9-%d9%83%d8%a7%d9%86%d9%8a%d8%af%d8%a7" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+                <div class="ad-slot-wrapper">
+                    <ins style="width: 300px;height:250px" data-width="300" data-height="250" class="g2fb0b4c321" data-domain="//data527.click" data-affquery="/e3435b2a507722939b6f/2fb0b4c321/?placementName=default"><script src="//data527.click/js/responsive.js" async></script></ins>
+                </div>
+            <article class="glass-card">
+                <div class="badge">خبر</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">بالفيديو.. طرد مورينيو خلال تعادل مثير في كلاسيكو الكرة البرتغالية</h2>
+                    <p class="card-snippet">شهد كلاسيكو الكرة البرتغالية بين بورتو وبنفيكا إثارة كبيرة بين الفريقين إمتدت إلى مقاعد المدربين....</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/sport/2026/3/9/%d8%b7%d8%b1%d8%af-%d8%ac%d9%88%d8%b2%d9%8a%d9%87-%d9%85%d9%88%d8%b1%d9%8a%d9%86%d9%8a%d9%88-%d8%a8%d9%86%d9%81%d9%8a%d9%83%d8%a7-%d8%a8%d9%88%d8%b1%d8%aa%d9%88" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+            <article class="glass-card">
+                <div class="badge">خبر</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">رئيس وزراء قطر: هجمات إيران على الدوحة تُشعرنا بـ"خيانة كبيرة"</h2>
+                    <p class="card-snippet">اعتبر رئيس الوزراء وزير الخارجية القطري الشيخ محمد بن عبد الرحمن بن جاسم آل ثاني أن الهجمات الإيرانية على قطر ...</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/news/2026/3/9/%d8%b1%d8%a6%d9%8a%d8%b3-%d9%88%d8%b2%d8%b1%d8%a7%d8%a1-%d9%82%d8%b7%d8%b1-%d8%a7%d9%84%d9%87%d8%ac%d9%85%d8%a7%d8%aa-%d8%a7%d9%84%d8%a5%d9%8a%d8%b1%d8%a7%d9%86%d9%8a%d8%a9-%d8%b9%d9%84%d9%89" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+            <article class="glass-card">
+                <div class="badge">خبر</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">استئناف مباريات الدوري القطري لكرة القدم</h2>
+                    <p class="card-snippet">تستأنف مباريات الدوري القطري لكرة القدم بداية من الخميس المقبل وتقام الجولة 18 على مدار يومين....</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/sport/2026/3/9/%d8%a7%d8%b3%d8%aa%d8%a6%d9%86%d8%a7%d9%81-%d9%85%d8%a8%d8%a7%d8%b1%d9%8a%d8%a7%d8%aa-%d8%a7%d9%84%d8%af%d9%88%d8%b1%d9%8a-%d8%a7%d9%84%d9%82%d8%b7%d8%b1%d9%8a-%d9%84%d9%83%d8%b1%d8%a9" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+            <article class="glass-card">
+                <div class="badge">خبر</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">من إيران إلى إسرائيل والخليج.. الحرب تضرب مفاصل الطاقة والتجارة</h2>
+                    <p class="card-snippet">ترصد الجزيرة نت في هذا التقرير دخول الحرب على إيران مرحلة أكثر كلفة اقتصادية مع انتقال الضربات من المجال العسك...</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/ebusiness/2026/3/9/iran-israel-war-energy-trade" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+                <div class="ad-slot-wrapper">
+                    <ins style="width: 300px;height:250px" data-width="300" data-height="250" class="g2fb0b4c321" data-domain="//data527.click" data-affquery="/e3435b2a507722939b6f/2fb0b4c321/?placementName=default"><script src="//data527.click/js/responsive.js" async></script></ins>
+                </div>
+            <article class="glass-card">
+                <div class="badge">خبر</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">اتصالات دولية تدعم قطر.. تضامن بريطاني وإسباني وإدانة لاعتداءات إيران</h2>
+                    <p class="card-snippet">تلقى أمير قطر الشيخ تميم بن حمد آل ثاني رسالة تضامن من ملك بريطانيا تشارلز الثالث، واتصالا من ملك إسبانيا فيلي...</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/news/2026/3/9/%d8%a7%d8%aa%d8%b5%d8%a7%d9%84%d8%a7%d8%aa-%d8%af%d9%88%d9%84%d9%8a%d8%a9-%d8%af%d8%a7%d8%b9%d9%85%d8%a9-%d9%84%d9%82%d8%b7%d8%b1-%d8%aa%d8%b6%d8%a7%d9%85%d9%86" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+            <article class="glass-card">
+                <div class="badge">خبر</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">شاهد.. ميلان يهزم إنتر ليحافظ على آماله في الفوز بلقب الدوري الإيطالي</h2>
+                    <p class="card-snippet">ضرب ميلان عصفوين بفوز واحد على إنتر حيث قلص الفارق مع المتصدر وأكد تفوقه عليه في المواجهات المباشرة هذا الموسم...</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/sport/2026/3/9/%d9%85%d9%8a%d9%84%d8%a7%d9%86-%d9%8a%d9%87%d8%b2%d9%85-%d8%a5%d9%86%d8%aa%d8%b1-%d8%b5%d8%af%d8%a7%d8%b1%d8%a9-%d8%a7%d9%84%d8%af%d9%88%d8%b1%d9%8a-%d8%a7%d9%84%d8%a5%d9%8a%d8%b7%d8%a7%d9%84%d9%8a" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+            <article class="glass-card">
+                <div class="badge">خبر</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">آية الله مجتبى خامنئي.. المرشد الثالث لإيران</h2>
+                    <p class="card-snippet">آية الله مجتبى خامنئي اختاره مجلس خبراء القيادة مرشدا أعلى لإيران بعد اغتيال والده علي خامنئي بقصف أمريكي إسرا...</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/encyclopedia/2026/3/9/%d8%a2%d9%8a%d8%a9-%d8%a7%d9%84%d9%84%d9%87-%d9%85%d8%ac%d8%aa%d8%a8%d9%89-%d8%ae%d8%a7%d9%85%d9%86%d8%a6%d9%8a-%d9%85%d8%b1%d8%b4%d8%af-%d8%a5%d9%8a%d8%b1%d8%a7%d9%86" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+            <article class="glass-card">
+                <div class="badge">خبر</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">ماذا سيحدث لأسواق الطاقة العالمية إذا أعلنت دول الخليج "القوة القاهرة"؟</h2>
+                    <p class="card-snippet">تصاعد الحرب في الشرق الأوسط قد يدفع دول الخليج إلى إعلان &quot;القوة القاهرة&quot; ووقف الإمدادات، مما يهدد بت...</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/ebusiness/2026/3/9/%d9%85%d8%a7%d8%b0%d8%a7-%d8%b3%d9%8a%d8%ad%d8%af%d8%ab-%d9%84%d8%a3%d8%b3%d9%88%d8%a7%d9%82-%d8%a7%d9%84%d8%b7%d8%a7%d9%82%d8%a9-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85%d9%8a%d8%a9-%d8%a5%d8%b0%d8%a7" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+                <div class="ad-slot-wrapper">
+                    <ins style="width: 300px;height:250px" data-width="300" data-height="250" class="g2fb0b4c321" data-domain="//data527.click" data-affquery="/e3435b2a507722939b6f/2fb0b4c321/?placementName=default"><script src="//data527.click/js/responsive.js" async></script></ins>
+                </div>
+            <article class="glass-card">
+                <div class="badge">خبر</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">أعلن نفادها ثم أطلق دفعة جديدة.. هل بالغ فيفا في أسعار تذاكر مونديال 2026؟</h2>
+                    <p class="card-snippet">رغم أن رئيس الفيفا جياني إنفانتينو قال قبل أيام إن هناك إقبالا غير مسبوق على تذاكر كأس العالم 2026، وإن كل الت...</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/sport/2026/3/9/%d8%aa%d8%b0%d8%a7%d9%83%d8%b1-%d9%83%d8%a3%d8%b3-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85-2026-%d8%a7%d9%84%d9%81%d9%8a%d9%81%d8%a7" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+            <article class="glass-card">
+                <div class="badge">خبر</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">طهران تحذر واشنطن: هل تتحملون ارتفاع سعر برميل النفط إلى 200 دولار؟</h2>
+                    <p class="card-snippet">حذّرت إيران من تداعيات اقتصادية خطيرة إذا استمرت الهجمات عليها، مؤكدة أن تصعيد الصراع قد يدفع أسعار النفط إلى ...</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/politics/2026/3/9/%d8%b7%d9%87%d8%b1%d8%a7%d9%86-%d8%aa%d8%ad%d8%b0%d8%b1-%d9%88%d8%a7%d8%b4%d9%86%d8%b7%d9%86-%d9%87%d9%84-%d8%aa%d8%aa%d8%ad%d9%85%d9%84%d9%88%d9%86-%d8%a7%d8%b1%d8%aa%d9%81%d8%a7%d8%b9" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+            <article class="glass-card">
+                <div class="badge">خبر</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">تونس تعتزم توسيع مطار قرطاج بتكلفة مليار دولار لرفع الطاقة الاستيعابية</h2>
+                    <p class="card-snippet">تعتزم تونس توسيع مطار تونس قرطاج بتكلفة نحو مليار دولار لرفع طاقته الاستيعابية من 5 ملايين إلى 18.5 مليون مساف...</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/ebusiness/2026/3/9/%d8%aa%d9%88%d9%86%d8%b3-%d8%aa%d8%b9%d8%aa%d8%b2%d9%85-%d8%aa%d9%88%d8%b3%d9%8a%d8%b9-%d9%85%d8%b7%d8%a7%d8%b1-%d9%82%d8%b1%d8%b7%d8%a7%d8%ac-%d8%a8%d8%aa%d9%83%d9%84%d9%81%d8%a9" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+            <article class="glass-card">
+                <div class="badge">خبر</div>
+                <div class="card-image">
+                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
+                        <img src="https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE" loading="lazy" alt="news">
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">حسن طهراني مقدم.. "أبو الصواريخ" الإيرانية التي ترهب إسرائيل</h2>
+                    <p class="card-snippet">من خلال استقطاب التقنيات الصاروخية من دول مثل ليبيا وكوريا الشمالية والهندسة العكسية لمخلفات الصواريخ العراقية...</p>
+                    <div class="meta-data">
+                        <span>🕒 02:53 AM</span>
+                        <span class="trending-fire">🔥 عاجل</span>
+                    </div>
+                    <div class="action-area">
+                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">التفاصيل الكاملة</a>
+                        <a href="https://www.aljazeera.net/politics/2026/3/9/%d8%ad%d8%b3%d9%86-%d8%b7%d9%87%d8%b1%d8%a7%d9%86%d9%8a-%d9%85%d9%82%d8%af%d9%85-%d8%a3%d8%a8%d9%88-%d8%a7%d9%84%d8%b5%d9%88%d8%a7%d8%b1%d9%8a%d8%ae" target="_blank" class="btn-outline">المصدر</a>
+                    </div>
+                </div>
+            </article>
+                <div class="ad-slot-wrapper">
+                    <ins style="width: 300px;height:250px" data-width="300" data-height="250" class="g2fb0b4c321" data-domain="//data527.click" data-affquery="/e3435b2a507722939b6f/2fb0b4c321/?placementName=default"><script src="//data527.click/js/responsive.js" async></script></ins>
+                </div>
+    </main>
+
+    <footer>
+        <p>Alhadath 24 Premium Dashboard &copy; 2026</p>
+    </footer>
+</body>
+</html>
