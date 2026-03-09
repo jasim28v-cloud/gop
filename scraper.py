@@ -4,7 +4,7 @@ from datetime import datetime
 import re
 
 def run_news():
-    rss_url = "https://www.aljazeera.net/rss/sport"
+    rss_url = "https://www.skynewsarabia.com/rss/"
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
     
     try:
